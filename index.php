@@ -1,5 +1,4 @@
 <?php session_start();
-
 if (isset($_POST['mail']) && isset($_POST['mdp'])) {
     $mail = $_POST["mail"];
     $mdp = $_POST["mdp"];
@@ -9,17 +8,20 @@ if (isset($_POST['mail']) && isset($_POST['mdp'])) {
         $i = 1;//Compteur de ligne
         while (!feof($fic)) {
             $ligne = fgets($fic, 1024);
-            if ($ligne != $mail or $ligne != $mdp)
+            if ($ligne != $mail or $ligne != $mdp) {
+                $i++;
+            } else {
                 echo "Erreur d'identification";
-        $i++;
-    }
-    fclose($fic);
-} else {
+            }
+        }
+        include ("dashboard.php");
+        fclose($fic);
+    } else {
         echo "remplir tous les champs";
     }
 }
 session_destroy();
-?><!DOCTYPE.html>
+?><!DOCTYPE html>
 <html lang ="en">
 <head>
     <meta charset = "utf-8">
