@@ -34,7 +34,7 @@ session_destroy();
 </head>
 <body>
     <h1>Inscription</h1>
-    <form class="form-inline" action="" method="post">
+    <form action="" method="post">
         <input class="form-control mb-2 mr_sm-2" type="email" name="mail" placeholder="Entrer votre adresse mail" >
         <input class="form-control mb-2 mr_sm-2" type="password" name="mdp" placeholder="Entrer votre mot de passe" >
         <input class="form-control mb-2 mr_sm-2" type="password" name="confirm" placeholder="Confirmer votre mot de passe" >
