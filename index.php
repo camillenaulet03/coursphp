@@ -1,4 +1,4 @@
-<?php
+<?php session_start();
 
 if (isset($_POST['mail']) && isset($_POST['mdp']) && isset($_POST['confirm'])) {
     $mail = $_POST["mail"];
@@ -18,6 +18,7 @@ if (isset($_POST['mail']) && isset($_POST['mdp']) && isset($_POST['confirm'])) {
         echo "remplir tous les champs";
     }
 }
+session_destroy();
 ?><!DOCTYPE.html>
 <html lang ="en">
 <head>
