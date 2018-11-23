@@ -6,9 +6,7 @@ if (isset($_POST['mail']) && isset($_POST['mdp']) && isset($_POST['confirm'])) {
     $mail = $_POST["mail"];
     $mdp = $_POST["mdp"];
     $confirm = $_POST["confirm"];
-    $lignes[] = array("mail" => $mail);
-    $lignes[] = array("mdp" => $mdp);
-    $confirmation[] = array("confirm" => $confirm);
+    $lignes[] = array("mail" => $mail, "mdp" => $mdp);
     $chemin = 'csv.csv';
     $delimiteur = ';';
 
@@ -21,7 +19,6 @@ if (isset($_POST['mail']) && isset($_POST['mdp']) && isset($_POST['confirm'])) {
         fprintf($csv_csv, chr(0xEF) . chr(0xBB) . chr(0xBF));
         foreach ($lignes as $ligne) {
             fputcsv($csv_csv, $ligne, $delimiteur);
-            require_once "index.php";
         }
         fclose($csv_csv);
     } else {
