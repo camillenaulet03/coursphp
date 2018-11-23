@@ -1,6 +1,6 @@
 <?php session_start();
 
-if (isset($_POST['mail']) && isset($_POST['mdp']) && isset($_POST['confirm'])) {
+if (isset($_POST['mail']) && isset($_POST['mdp'])) {
     $mail = $_POST["mail"];
     $mdp = $_POST["mdp"];
 
